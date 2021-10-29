@@ -1,0 +1,129 @@
+:root{
+  --font: -apple-system, 
+    BlinkMacSystemFont, 
+    "Segoe UI", 
+    Roboto, 
+    Oxygen-Sans, 
+    Ubuntu, 
+    Cantarell, 
+    "Helvetica Neue", 
+    sans-serif;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition-delay: 1s ease-in-out;
+}
+html, body{
+  height: 100%;
+  margin: 0;
+}
+body{
+  position: relative;
+  z-index: 1;
+  font-size: 1.500em;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--color);
+  display: flex;
+  font-family: var(--font);
+  animation: fadeInAnimation ease-in-out 5s, drop 2.5s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+body[data-theme='light_theme']{
+  --bg-color: #ffd54f;
+  --color: #333333;
+}
+body[data-theme='dark_theme']{
+  --bg-color: #333333;
+  --color: #ffd54f;
+}
+#confetti{
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+#container{
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  text-align: center;
+}
+h1{
+  font-weight: normal;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+  margin-bottom: 2.5%;
+}
+li{
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+li span{
+  display: block;
+  font-size: 4.5rem;
+}
+#song{
+  cursor: pointer;
+}
+#wishes{
+  display: none;
+  font-size: 1.250em;
+  line-height: 225%;
+}
+#age{
+  font-weight: bold;
+}
+details{
+  margin-top: 2%;
+  float: right;
+  text-align: center;
+  cursor: pointer;
+  height: 170px;
+  position: relative;
+  z-index: 2;
+}
+#genie{
+  cursor: default;
+  font-size: 1em;
+  line-height: 225%;
+}
+#button{
+  font-family: var(--font);
+  color: var(--color);
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+  outline:  3px solid var(--color);
+  outline-offset: .1em;
+  border: 3px solid var(--color);
+  padding: 10px 35px 10px 35px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+@keyframes drop {
+  from {
+    height: 75%
+  }
+  to {
+    height: 100%
+  }
+}
